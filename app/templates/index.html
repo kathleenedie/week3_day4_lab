@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - My Event List</title>
+</head>
+<body>
+
+    <h1>Enter an Event </h1>
+
+    <div>
+        <form action="/" method="post">
+        <label for="date">Date of event</label>
+        <input type="text" name="date" id="date"><br>
+        <label for="name">Name of event</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="guests">No of guests</label>
+        <input type="number" name="guests" id="guests"><br>
+        <label for="room">Room</label>
+        <input type="text" name="room" id="room"><br>
+        <label for="description">Description</label>
+        <textarea name="description" rows="2" cols="30"></textarea><br>
+        <label for="recurring">Recurring Event?</label>
+        <input type="checkbox" name="recurring" id="recurring"><br>
+        <input type="submit" value="Add Event">
+        </form>
+    </div>
+
+    <h1>Our Events </h1>
+
+
+    {% for event in events%}
+        <div>
+            <p>Name: {{event.name}}</p>
+            <p>Description: {{event.description}}</p>
+            <p>Date: {{event.date}}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
